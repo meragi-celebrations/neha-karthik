@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-primary: #330337;
+  --color-primary-container: #4b1b4d;
+  --color-on-primary: #ffffff;
+  --color-secondary: #af2b3e;
+  --color-tertiary: #2a140d;
+  --color-surface: #faf9f8;
+  --color-surface-container: #eeeeed;
+  --color-surface-container-low: #f4f3f2;
+  --color-surface-container-high: #e9e8e7;
+  --color-surface-container-highest: #e3e2e1;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-surface: #1a1c1c;
+  --color-on-surface-variant: #4e444c;
+  --color-outline: #80737d;
+  --color-outline-variant: #d1c2cd;
+  --color-primary-fixed: #ffd6f9;
+  --color-primary-fixed-dim: #f2b2ee;
+  --color-on-primary-fixed: #340538;
+  --color-secondary-fixed: #ffdada;
+  --color-on-secondary-fixed: #44000d;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-headline: var(--font-newsreader), serif;
+  --font-body: var(--font-manrope), sans-serif;
+  --font-label: var(--font-manrope), sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface);
+  color: var(--color-on-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.input-underline {
+  border: none;
+  border-bottom: 1px solid #80737d;
+  background: transparent;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.input-underline:focus {
+  box-shadow: none;
+  border-bottom: 2px solid #330337;
+  outline: none;
+}
+
+.floral-bg {
+  background-image: linear-gradient(rgba(250, 249, 248, 0.95), rgba(250, 249, 248, 0.95)), url(/assets/RSVP_gradient.webp);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-attachment: fixed;
 }
