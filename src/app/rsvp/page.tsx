@@ -65,6 +65,10 @@ export default function RSVP() {
       }
 
       if (result.success && result.found) {
+        if ((result as any).alreadyRSVPd) {
+          setStatus("duplicate");
+          return;
+        }
         setInvitedEvents(result.invitedEvents);
         setLookupMessage("Invitation found!");
         
@@ -85,15 +89,7 @@ export default function RSVP() {
     }
   };
 
-  // Auto-lookup with debounce
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (formData.email && formData.email.includes('@') && formData.email.includes('.')) {
-        handleLookup(formData.email);
-      }
-    }, 800);
-    return () => clearTimeout(timer);
-  }, [formData.email]);
+  // Auto-lookup with debounce (Contact Number Only)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -232,7 +228,7 @@ export default function RSVP() {
                   onClick={() => setStatus("idle")}
                   className="font-label text-[10px] uppercase tracking-widest text-secondary border-b border-secondary pb-1"
                 >
-                  Edit or Add Another Response
+                  Add Another Response
                 </button>
               </div>
             ) : status === "duplicate" ? (
@@ -240,9 +236,9 @@ export default function RSVP() {
                 <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-8">
                   <span className="material-symbols-outlined text-secondary text-4xl">inventory_2</span>
                 </div>
-                <h2 className="font-headline text-5xl text-secondary">Already Registry</h2>
+                <h2 className="font-headline text-5xl text-primary">Already Registered</h2>
                 <p className="font-body text-lg text-on-surface-variant italic max-w-md mx-auto">
-                  It looks like you have already submitted an RSVP for this email address. If you need to change your response, please contact us directly.
+                  It looks like an RSVP has already been submitted for this contact number. If you need to update your response, please reach out to us directly.
                 </p>
                 <button 
                   onClick={() => setStatus("idle")}
@@ -573,24 +569,26 @@ export default function RSVP() {
                   </div>
                 )}
 
-                {/* CTA Section */}
-                <div className="pt-8 flex flex-col items-center space-y-6">
-                  <button
-                    disabled={status === "submitting"}
-                    className="w-full md:w-auto px-16 py-5 bg-linear-to-r from-primary to-primary-container text-on-primary font-label text-xs uppercase tracking-[0.2em] rounded-sm hover:opacity-95 transition-all shadow-xl shadow-primary/10 disabled:opacity-50 disabled:cursor-not-allowed"
-                    type="submit"
-                  >
-                    {status === "submitting" ? "Checking Registry..." : "Confirm Response"}
-                  </button>
-                  {status === "error" && (
-                    <p className="text-secondary font-label text-[10px] uppercase tracking-widest animate-pulse">
-                      Something went wrong. Please try again or reach out to us directly.
+                {/* CTA Section - Only visible if invitation found */}
+                {invitedEvents !== null && (
+                  <div className="pt-8 flex flex-col items-center space-y-6">
+                    <button
+                      disabled={status === "submitting"}
+                      className="w-full md:w-auto px-16 py-5 bg-linear-to-r from-primary to-primary-container text-on-primary font-label text-xs uppercase tracking-[0.2em] rounded-sm hover:opacity-95 transition-all shadow-xl shadow-primary/10 disabled:opacity-50 disabled:cursor-not-allowed"
+                      type="submit"
+                    >
+                      {status === "submitting" ? "Checking Registry..." : "Confirm Response"}
+                    </button>
+                    {status === "error" && (
+                      <p className="text-secondary font-label text-[10px] uppercase tracking-widest animate-pulse">
+                        Something went wrong. Please try again or reach out to us directly.
+                      </p>
+                    )}
+                    <p className="font-headline text-lg italic text-secondary text-center">
+                      Please respond by May 15th, 2026
                     </p>
-                  )}
-                  <p className="font-headline text-lg italic text-secondary text-center">
-                    Please respond by May 15th, 2026
-                  </p>
-                </div>
+                  </div>
+                )}
               </form>
             )}
           </div>

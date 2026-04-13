@@ -92,6 +92,26 @@ function doGet(e) {
     if (phoneClean.includes(cleanId) || cleanId === emailClean) {
       console.log("MATCH FOUND at row " + (i + 1) + " (Name: " + row[1] + ")");
       results.found = true;
+
+      // CHECK FOR DUPLICATES in the LOG sheet using Phone Number
+      const masterPhoneDigits = phoneRaw.replace(/[^0-9]/g, ''); // All authorized digits for this row
+      const logSheet = ss.getSheetByName(LOG_SHEET_NAME);
+      const logData = logSheet.getDataRange().getValues();
+      
+      for (let k = 1; k < logData.length; k++) {
+        const logPhoneRaw = logData[k][7] ? logData[k][7].toString() : "";
+        const logPhoneDigits = logPhoneRaw.replace(/[^0-9]/g, '');
+        
+        // Match using the last 10 digits to bypass formatting/country code variations
+        if (logPhoneDigits.length >= 10) {
+          const last10 = logPhoneDigits.slice(-10);
+          if (masterPhoneDigits.includes(last10)) {
+            results.alreadyRSVPd = true;
+            break;
+          }
+        }
+      }
+
       for (let j = 11; j < headers.length; j++) {
         const val = row[j] ? row[j].toString().toUpperCase().trim() : "";
         if (val === "Y") {
