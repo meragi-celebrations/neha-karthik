@@ -24,93 +24,65 @@ export default function Contact() {
           </div>
         </header>
 
-        <section className="px-8 md:px-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
-          {/* Contact Details */}
-          <div className="space-y-16">
-            <div className="space-y-8">
+        <section className="px-8 md:px-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32">
+          {/* Main Contact Info */}
+          <div className="space-y-12">
+            <div className="space-y-6">
               <h2 className="font-headline text-4xl text-primary">Wedding Concierge</h2>
-              <p className="font-body text-lg text-on-surface-variant leading-relaxed">
+              <p className="font-body text-lg text-on-surface-variant leading-relaxed max-w-md">
                 For any immediate assistance regarding travel, accommodation, or venue directions, please contact our dedicated concierge team.
               </p>
-              
-              <div className="space-y-6 pt-8 border-t border-outline-variant/20">
-                <div className="flex items-center gap-4">
-                  <span className="material-symbols-outlined text-primary">call</span>
-                  <div>
-                    <p className="font-label text-[10px] uppercase tracking-widest text-primary opacity-60">Mobile</p>
-                    <p className="font-headline text-2xl text-primary">+91 98765 43210</p>
-                  </div>
+            </div>
+            
+            <div className="grid grid-cols-1 gap-10 pt-8 border-t border-outline-variant/20">
+              <div className="flex items-start gap-6 group">
+                <div className="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                  <span className="material-symbols-outlined">call</span>
                 </div>
-                <div className="flex items-center gap-4">
-                  <span className="material-symbols-outlined text-primary">mail</span>
-                  <div>
-                    <p className="font-label text-[10px] uppercase tracking-widest text-primary opacity-60">Email</p>
-                    <p className="font-headline text-2xl text-primary">hello@nehaandkarthik.com</p>
-                  </div>
+                <div>
+                  <p className="font-label text-[10px] uppercase tracking-widest text-primary opacity-60 mb-1">Mobile</p>
+                  <a href="tel:+918828036446" className="font-headline text-2xl text-primary hover:text-secondary transition-colors">+91 88280 36446</a>
                 </div>
               </div>
-            </div>
-
-            <div className="p-12 bg-surface-container-low rounded-sm space-y-6">
-              <h3 className="font-headline text-2xl text-primary">Important Dates</h3>
-              <ul className="space-y-4">
-                <li className="flex justify-between items-baseline border-b border-outline-variant/10 pb-2">
-                  <span className="font-label text-xs uppercase tracking-widest opacity-60">Celebrations Begin</span>
-                  <span className="font-headline text-lg">July 06, 2026</span>
-                </li>
-                <li className="flex justify-between items-baseline border-b border-outline-variant/10 pb-2">
-                  <span className="font-label text-xs uppercase tracking-widest opacity-60">The Grand Union</span>
-                  <span className="font-headline text-lg">July 12, 2026</span>
-                </li>
-                <li className="flex justify-between items-baseline pb-2">
-                  <span className="font-label text-xs uppercase tracking-widest opacity-60">RSVP Deadline</span>
-                  <span className="font-headline text-lg text-secondary">June 15, 2026</span>
-                </li>
-              </ul>
+              
+              <div className="flex items-start gap-6 group">
+                <div className="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                  <span className="material-symbols-outlined">mail</span>
+                </div>
+                <div>
+                  <p className="font-label text-[10px] uppercase tracking-widest text-primary opacity-60 mb-1">Email</p>
+                  <a href="mailto:hello@nehaandkarthik.com" className="font-headline text-2xl text-primary hover:text-secondary transition-colors underline decoration-primary/20 underline-offset-4">hello@nehaandkarthik.com</a>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white p-12 md:p-16 shadow-[0_20px_50px_rgba(51,3,55,0.05)] border border-outline-variant/10">
-            <h2 className="font-headline text-4xl text-primary mb-12">Send a Message</h2>
-            <form className="space-y-10">
-              <div className="space-y-2">
-                <label className="font-label text-xs uppercase tracking-widest text-primary opacity-60">Your Name</label>
-                <input 
-                  type="text" 
-                  className="w-full text-xl font-headline py-4 border-b border-outline focus:border-primary transition-colors outline-none bg-transparent"
-                  placeholder="Inaaya Gupta"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="font-label text-xs uppercase tracking-widest text-primary opacity-60">Email Address</label>
-                <input 
-                  type="email" 
-                  className="w-full text-xl font-headline py-4 border-b border-outline focus:border-primary transition-colors outline-none bg-transparent"
-                  placeholder="inaaya@example.com"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="font-label text-xs uppercase tracking-widest text-primary opacity-60">Subject</label>
-                <select className="w-full text-xl font-headline py-4 border-b border-outline focus:border-primary transition-colors outline-none bg-transparent appearance-none">
-                  <option>General Inquiry</option>
-                  <option>Travel & Logistics</option>
-                  <option>Gift Registry</option>
-                  <option>Message for Couple</option>
-                </select>
-              </div>
-              <div className="space-y-2">
-                <label className="font-label text-xs uppercase tracking-widest text-primary opacity-60">Message</label>
-                <textarea 
-                  rows={4}
-                  className="w-full text-xl font-headline py-4 border-b border-outline focus:border-primary transition-colors outline-none bg-transparent resize-none"
-                  placeholder="How can we help you?"
-                />
-              </div>
-              <button className="w-full bg-primary text-on-primary py-6 font-label text-xs uppercase tracking-[0.3em] hover:bg-primary/90 transition-all shadow-xl">
-                Send Message
-              </button>
-            </form>
+          {/* Timeline / Important Dates */}
+          <div className="bg-surface-container-low p-10 md:p-14 rounded-sm border border-outline-variant/10 shadow-sm self-start">
+            <h3 className="font-headline text-3xl text-primary mb-10 italic">Key Milestones</h3>
+            <ul className="space-y-8">
+              <li className="flex justify-between items-end border-b border-outline-variant/10 pb-4 group">
+                <div className="space-y-1">
+                  <span className="font-label text-[10px] uppercase tracking-widest opacity-60 block">Celebrations Begin</span>
+                  <span className="font-headline text-xl text-primary">July 06, 2026</span>
+                </div>
+                <span className="font-body text-xs italic text-secondary opacity-0 group-hover:opacity-100 transition-opacity">Bangalore</span>
+              </li>
+              <li className="flex justify-between items-end border-b border-outline-variant/10 pb-4 group">
+                <div className="space-y-1">
+                  <span className="font-label text-[10px] uppercase tracking-widest opacity-60 block">The Grand Union</span>
+                  <span className="font-headline text-xl text-primary">July 12, 2026</span>
+                </div>
+                <span className="font-body text-xs italic text-secondary opacity-0 group-hover:opacity-100 transition-opacity">Sheraton Grand</span>
+              </li>
+              <li className="flex justify-between items-end border-b border-outline-variant/10 pb-4 group">
+                <div className="space-y-1">
+                  <span className="font-label text-[10px] uppercase tracking-widest opacity-60 block">RSVP Deadline</span>
+                  <span className="font-headline text-xl text-secondary">June 15, 2026</span>
+                </div>
+                <span className="font-body text-xs italic text-secondary opacity-0 group-hover:opacity-100 transition-opacity">Final Call</span>
+              </li>
+            </ul>
           </div>
         </section>
       </div>

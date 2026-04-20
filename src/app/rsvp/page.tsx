@@ -8,14 +8,14 @@ import Link from "next/link";
 import { submitRSVP, checkDuplicateRSVP, checkInvitation } from "./actions";
 
 const EVENT_INFO: Record<string, { date: string; time?: string; location: string }> = {
-  "Devara Samradhane": { date: "July 6th", time: "9:00 AM onwards", location: "Ekadanta Mandira" },
-  "Devara Samaradhane": { date: "July 6th", time: "9:00 AM onwards", location: "Ekadanta Mandira" },
-  "Welcome Lunch": { date: "July 10th", location: "Zinnia, Sheraton" },
-  "Sangeet & Afterparty": { date: "July 10th", location: "Scarlet Ballroom" },
-  "Mehendi followed by Lunch": { date: "July 11th", location: "Party Lawn" },
-  "Varapuje": { date: "July 11th", location: "Zinnia" },
-  "Wedding": { date: "July 12th", location: "Convention Center" },
-  "Reception": { date: "July 12th", location: "Scarlet Ballroom" }
+  "Devara Samradhane": { date: "July 6th", time: "10:00 AM – 3:00 PM", location: "Ekadanta Mandira" },
+  "Devara Samaradhane": { date: "July 6th", time: "10:00 AM – 3:00 PM", location: "Ekadanta Mandira" },
+  "Welcome Lunch": { date: "July 10th", time: "11:00 AM – 2:00 PM", location: "Zinnia, Sheraton" },
+  "Sangeet & Afterparty": { date: "July 10th", time: "7:00 PM – 10:00 PM (Sangeeth) & 11:00 PM onwards (After Party)", location: "Scarlet Ballroom" },
+  "Mehendi followed by Lunch": { date: "July 11th", time: "11:00 AM – 2:00 PM", location: "Party Lawn" },
+  "Varapuje": { date: "July 11th", time: "6:30 PM – 10:00 PM", location: "Zinnia" },
+  "Wedding": { date: "July 12th", time: "10:00 AM – 2:00 PM", location: "Convention Center" },
+  "Reception": { date: "July 12th", time: "7:00 PM – 10:00 PM (Reception) & 10:00 PM onwards (After Party)", location: "Scarlet Ballroom" }
 };
 
 export default function RSVP() {
@@ -211,7 +211,7 @@ export default function RSVP() {
                 July 12, 2026 • Bangalore
               </span>
             <h1 className="font-headline text-6xl md:text-8xl italic text-primary leading-tight">
-              Kindly Respond
+              Please Respond
             </h1>
             <div className="mt-8 flex justify-center items-center gap-4">
               <span className="h-px w-12 bg-outline-variant opacity-30"></span>
@@ -675,8 +675,8 @@ export default function RSVP() {
                   <div className="flex-1 space-y-2">
                     <h4 className="font-headline text-2xl text-primary group-hover/item:text-secondary transition-colors">{name}</h4>
                     <p className="font-body text-sm text-on-surface-variant italic">{info.time}</p>
-                    <div className="flex items-start gap-2 pt-2">
-                      <span className="material-symbols-outlined text-[14px] text-secondary/60 mt-0.5">location_on</span>
+                    <div className="flex items-center gap-2 pt-2">
+                      <span className="material-symbols-outlined text-[14px] text-secondary/60">location_on</span>
                       <p className="font-label text-[10px] uppercase tracking-widest opacity-60 leading-relaxed max-w-xs">{info.location}</p>
                     </div>
                   </div>
