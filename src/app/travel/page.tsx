@@ -79,7 +79,7 @@ export default function Travel() {
                            <div className="grid grid-cols-1 gap-1">
                               <span className="font-label text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">Address</span>
                               <span className="font-headline text-base text-primary italic leading-[1.4] max-w-sm">
-                                Deepak Visweswaraiah, #D25, Manyata Residency 10th Cross, Inside Manyata Tech Park Hebbal Ring Road, Nagavara Bangalore 560045, India
+                                #D25, Manyata Residency 10th Cross, Inside Manyata Tech Park Hebbal Ring Road, Nagavara Bangalore 560045, India
                               </span>
                            </div>
                            <div className="grid grid-cols-1 gap-1">
