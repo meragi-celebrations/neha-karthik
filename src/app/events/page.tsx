@@ -17,7 +17,7 @@ export default function Events() {
   const events: WeddingEvent[] = [
     {
       date: "July 6th",
-      time: "9:00 AM onwards",
+      time: "10:00 AM – 3:00 PM",
       title: "Devara Samradhane",
       description: "Commencing our journey with divine blessings. A morning of spiritual resonance and traditional rituals followed by a sacred brunch.",
       location: "Ekadanta Pravachana Mandira, B.E.L. Sri Ganapathi Seva Mandali, B.E.L. Colony, Jalahalli, Bengaluru 560 013",
@@ -26,6 +26,7 @@ export default function Events() {
     },
     {
       date: "July 10th",
+      time: "11:00 AM – 2:00 PM",
       title: "Welcome Lunch",
       description: "A vibrant introduction to our celebrations. Join us for a curated afternoon of flavors and hospitality as we welcome our loved ones.",
       location: "Zinnia, Sheraton Whitefield",
@@ -34,6 +35,7 @@ export default function Events() {
     },
     {
       date: "July 10th",
+      time: "7:00 PM – 10:00 PM (Sangeeth) & 11:00 PM onwards (After Party)",
       title: "Sangeet & Afterparty",
       description: "An electrifying night of music, dance, and celebration. Let the rhythms take over as we celebrate the union of two families.",
       location: "Scarlet Ballroom",
@@ -42,6 +44,7 @@ export default function Events() {
     },
     {
       date: "July 11th",
+      time: "11:00 AM – 2:00 PM",
       title: "Mehendi followed by Lunch",
       description: "Sun-kissed celebrations filled with intricate henna designs and joyous melodies. A relaxed afternoon on the lawn.",
       location: "Party Lawn / Scarlet Alfresco",
@@ -50,6 +53,7 @@ export default function Events() {
     },
     {
       date: "July 11th",
+      time: "6:30 PM – 10:00 PM",
       title: "Varpooje followed by Dinner",
       description: "Traditional rituals honoring our heritage, followed by a sophisticated Sit-down Banti Bhojanam dinner.",
       location: "Zinnia / Scarlet Ballroom",
@@ -58,6 +62,7 @@ export default function Events() {
     },
     {
       date: "July 12th",
+      time: "10:00 AM – 2:00 PM",
       title: "The Wedding followed by Lunch",
       description: "The pinnacle of our union. A grand ceremony followed by a celebratory Banti Bhojanam lunch in both Scarlet and Zinnia.",
       location: "Convention Center / Scarlet Ballroom",
@@ -66,6 +71,7 @@ export default function Events() {
     },
     {
       date: "July 12th",
+      time: "7:00 PM – 10:00 PM (Reception) & 10:00 PM onwards (After Party)",
       title: "Reception & Afterparty",
       description: "Concluding our celebrations with a grand reception and an unforgettable night of music and joy as a newly wed couple.",
       location: "Scarlet Ballroom",

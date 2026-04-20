@@ -26,7 +26,7 @@ const Footer = () => {
           Contact US
         </Link>
       </div>
-      <p className="font-label text-[10px] tracking-widest opacity-40 uppercase">
+      <p className="font-label text-amber-500 text-[10px] tracking-widest opacity-40 uppercase">
         © 2026 Neha & Karthik • Bangalore, India
       </p>
     </footer>
