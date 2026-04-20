@@ -74,18 +74,17 @@ export default function Travel() {
                         <div className="space-y-6">
                            <div className="grid grid-cols-1 gap-1">
                               <span className="font-label text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">Reference Name</span>
-                              <span className="font-headline text-xl text-primary">[PLACEHOLDER_NAME]</span>
+                              <span className="font-headline text-xl text-primary">Bhakti Munvar</span>
                            </div>
                            <div className="grid grid-cols-1 gap-1">
                               <span className="font-label text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">Address</span>
-                              <span className="font-headline text-xl text-primary italic leading-tight">
-                                [PLACEHOLDER_ADDRESS] <br />
-                                Bangalore, Karnataka, India
+                              <span className="font-headline text-base text-primary italic leading-[1.4] max-w-sm">
+                                Deepak Visweswaraiah, #D25, Manyata Residency 10th Cross, Inside Manyata Tech Park Hebbal Ring Road, Nagavara Bangalore 560045, India
                               </span>
                            </div>
                            <div className="grid grid-cols-1 gap-1">
                               <span className="font-label text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">Contact Number</span>
-                              <span className="font-headline text-xl text-primary">[PLACEHOLDER_PHONE]</span>
+                              <span className="font-headline text-xl text-primary">+91 88280 36446</span>
                            </div>
                         </div>
 
