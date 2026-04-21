@@ -4,31 +4,29 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // 1. Allow access to the lock page itself
-  if (pathname === '/lock') {
-    return NextResponse.next();
-  }
-
-  // 2. Allow access to static assets and Next.js internal files
+  // 1. Allow access to public paths and static assets
+  const publicPaths = ['/lock'];
   if (
+    publicPaths.includes(pathname) ||
     pathname.startsWith('/_next') || 
     pathname.startsWith('/api') || 
     pathname.startsWith('/assets') ||
-    pathname.includes('.') // Matches files like favicon.ico, images, etc.
+    pathname.includes('.')
   ) {
     return NextResponse.next();
   }
 
-  // 3. Check for the auth cookie
+  // 2. Check for the auth cookie
   const authToken = request.cookies.get('auth_token')?.value;
 
+  // Values from injected env vars or fallbacks
   const guestPass = process.env.GUEST_PASSWORD || "nehakarthik2026";
   const adminPass = process.env.ADMIN_PASSWORD || "nk2026@meragi";
 
   // Admin page restriction
   if (pathname.startsWith('/admin') && authToken !== adminPass) {
     const url = request.nextUrl.clone();
-    url.pathname = '/'; // Guests redirected to home if they try to access admin
+    url.pathname = '/';
     return NextResponse.redirect(url);
   }
 
@@ -38,13 +36,12 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 4. Redirect to lock page if not authenticated
+  // 3. Redirect to lock page if not authenticated
   const url = request.nextUrl.clone();
   url.pathname = '/lock';
   return NextResponse.redirect(url);
 }
 
-// Optionally, configure which paths the middleware should run on
 export const config = {
   matcher: [
     /*
