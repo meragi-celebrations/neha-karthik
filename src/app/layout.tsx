@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: "A celebration of legacy, love, and the coming together of two families in the heart of the Garden City.",
 };
 
+import AuthGuard from "@/components/AuthGuard";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,7 +37,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-body bg-surface text-on-surface">
-        {children}
+        <AuthGuard>
+          {children}
+        </AuthGuard>
       </body>
     </html>
   );
