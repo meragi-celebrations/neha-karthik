@@ -22,9 +22,9 @@ export default function Venue() {
             <span className="font-label text-secondary tracking-[0.4em] uppercase text-[10px] md:text-xs font-bold mb-6 block animate-in fade-in slide-in-from-bottom-4 duration-700 text-primary">
               The Venue
             </span>
-            <h1 className="font-headline text-5xl md:text-[7rem] text-primary leading-[1] tracking-tighter mb-12 animate-in fade-in slide-in-from-bottom-6 duration-1000">
+            <h1 className="font-headline text-6xl sm:text-6xl md:text-9xl text-primary leading-[0.9] tracking-tighter mb-12 animate-in fade-in slide-in-from-bottom-6 duration-1000">
               Sheraton Grand <br />
-              <span className="italic text-secondary">Bengaluru Whitefield</span>
+              <span className=" text-secondary">Bengaluru Whitefield</span>
             </h1>
             <p className="font-body text-xl md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
               A Five-star sanctuary of luxury and heritage, where modern elegance meets timeless sophistication in the heart of Bangalore's IT hub.
@@ -57,7 +57,7 @@ export default function Venue() {
                   <span className="font-label text-[10px] uppercase tracking-[0.4em] text-secondary font-bold">Resort Overview</span>
                 </div>
                 
-                <h2 className="font-headline text-5xl md:text-7xl lg:text-8xl text-primary mb-12 leading-[0.9] tracking-tighter">
+                <h2 className="font-headline text-4xl md:text-5xl lg:text-7xl text-primary mb-12 leading-[0.9] tracking-tighter">
                   Relax in a luxury suite <br />
                   <span className="italic text-secondary">at our Bengaluru hotel</span>
                 </h2>
@@ -92,7 +92,7 @@ export default function Venue() {
              <div className="lg:col-span-5 space-y-12">
                 <div className="space-y-6">
                    <span className="font-label text-secondary tracking-[0.4em] uppercase text-[10px] font-bold block">Getting There</span>
-                   <h2 className="font-headline text-5xl md:text-6xl text-primary leading-tight">Locate <br /> & <span className="italic">Navigate</span></h2>
+                   <h2 className="font-headline text-4xl md:text-5xl lg:text-7xl text-primary leading-tight">Locate <br /> & <span className="italic">Navigate</span></h2>
                 </div>
 
                 <div className="space-y-8 bg-surface-container-low p-6 md:p-12 border border-outline-variant/10 rounded-sm">

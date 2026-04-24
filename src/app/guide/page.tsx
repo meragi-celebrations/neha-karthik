@@ -107,7 +107,7 @@ export default function Guide() {
             <div className="md:w-3/5">
               <span className="font-label text-secondary tracking-[0.2em] uppercase text-xs font-bold mb-4 block">Destination Guide</span>
               <h1 className="font-headline text-7xl md:text-9xl text-primary leading-none -ml-1 md:-ml-2">
-                Bangalore <br/><span className="italic text-secondary">Anthology</span>
+                Bangalore <br/><span className=" text-secondary">Anthology</span>
               </h1>
               <p className="mt-8 font-body text-lg text-on-surface-variant max-w-xl leading-relaxed">
                 A curated selection of our favorite haunts in the Garden City. From the craft breweries of Whitefield to the silk markets of Commercial Street, explore the city that brought us together.

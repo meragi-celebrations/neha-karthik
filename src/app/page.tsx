@@ -32,11 +32,11 @@ export default function Home() {
               <span className="font-label text-secondary text-xs tracking-[0.3em] uppercase">
                 Est. 2026 • Bangalore, India
               </span>
-              <h1 className="font-headline text-7xl md:text-9xl text-primary leading-tight tracking-tighter">
+              <h1 className="font-headline text-7xl md:text-9xl text-primary leading-[1.05] tracking-tighter">
                 Neha & Karthik
               </h1>
             </div>
-            <p className="font-headline italic text-2xl text-on-surface-variant max-w-md">
+            <p className="font-body text-xl text-on-surface-variant leading-relaxed">
               A celebration of legacy, love, and the coming together of two families in the heart of the Garden City.
             </p>
             <div className="flex flex-wrap items-center justify-start gap-6 pt-4">
@@ -78,13 +78,13 @@ export default function Home() {
 
         {/* Welcome Section */}
         <section className="py-32 px-8 md:px-20 bg-surface">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
+          <div className="max-w-4xl mx-auto text-center md:space-y-12">
             <div className="inline-block px-4 py-1 border border-outline-variant rounded-full mb-4">
               <span className="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">
                 A Royal Welcome
               </span>
             </div>
-            <h2 className="font-headline text-5xl md:text-7xl text-primary leading-none">
+            <h2 className="font-headline text-4xl md:text-5xl lg:text-7xl text-primary leading-[1.2] tracking-tighter">
               We invite you to witness the beginning of our forever.
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 text-left">
@@ -115,23 +115,23 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-4 h-auto md:h-[1200px]">
             <div className="col-span-12 md:col-span-8 relative h-[400px] md:h-auto bg-surface-container overflow-hidden group">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBre19RizFhN7lzx0fu0dpBxRLD7o4EbhSv-34YVtKEOQlV-fx3WY0ikFs0yBcq9VBfsQcunGJOwyCZ8zHdVNOHFAusFxwQCE4MEqyEfgEc4tE87Nk5PXgx6NdcDzTlzjuG2hHSpekvJAloQavMmaw9PJUK-eH1uRGOoT6qbgcfJ7lOh7XHLs5crNW5jViNKnP1D0uY7LMVUtOZA1S-cKjWBR_2t9EGvF0wUqGNAxz-km9PYtnYmFcfvFU7UuZtKeydyadPfpBhRg"
-                alt="Henna Design"
+                src="/assets/family.webp"
+                alt="Our Family"
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 sizes="(max-width: 768px) 100vw, 66vw"
               />
             </div>
             <div className="col-span-12 md:col-span-4 bg-primary-container p-12 flex flex-col justify-end text-on-primary min-h-[300px]">
-              <h3 className="font-headline text-4xl mb-4">The Palette</h3>
+              <h3 className="font-headline text-4xl md:text-5xl mb-4">The Palette</h3>
               <p className="font-label text-xs tracking-wide opacity-70 uppercase">
                 Royal Violet • Rich Maroon • Ivory Paper
               </p>
             </div>
             <div className="col-span-12 md:col-span-4 relative h-[400px] md:h-auto bg-surface-container-high overflow-hidden">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9s8O8-W18g71fo34cQLe2dNYWrcx-KhsgzDbvM323yBNoV5eT3gU76cOgIkhdpmCLwn9tyxXMLQGXROB7Q3kW1SL2ZmDUnnXA4vddy9qZN7hVEeNa5tVCbMZMHzkx7lQbW3tVKjsrpkiIFNk8tlEczPBb9xCYYnUbR7zBKzvFeDF4n6Rk7VbAGgv4U877f7marzehQTjcsqXPRKNQmk2IMWUJH35TVMllzDkIeo2Y2zpZb4W36yYuIjLajEx8I4IQtAt2IjkbGQ"
-                alt="Palace Interior"
+                src="/assets/couple.jpeg"
+                alt="Neha & Karthik"
                 fill
                 className="object-cover"
               />
@@ -144,12 +144,12 @@ export default function Home() {
                 </span>
                 <div className="flex items-center justify-center gap-8 border-y border-outline-variant py-8">
                   <div className="text-center">
-                    <span className="font-headline text-6xl text-primary block">06-12</span>
+                    <span className="font-headline text-6xl text-primary block [font-variant-numeric:lining-nums]">06-12</span>
                     <span className="font-label text-xs uppercase opacity-60">July</span>
                   </div>
                   <div className="h-16 w-px bg-outline-variant"></div>
                   <div className="text-center">
-                    <span className="font-headline text-6xl text-primary block">2026</span>
+                    <span className="font-headline text-6xl text-primary block [font-variant-numeric:lining-nums]">2026</span>
                     <span className="font-label text-xs uppercase opacity-60">Year</span>
                   </div>
                 </div>
@@ -160,19 +160,19 @@ export default function Home() {
 
         {/* Location Teaser */}
         <section className="py-32 bg-primary text-on-primary overflow-hidden relative">
-          <div className="max-w-7xl mx-auto px-8 md:px-20 editorial-grid">
+          <div className="px-8 md:px-20 editorial-grid">
             <div className="col-span-12 md:col-span-6 space-y-12">
               <span className="font-label text-xs tracking-[0.4em] uppercase opacity-50">
                 The Destination
               </span>
-              <h2 className="font-headline text-6xl md:text-8xl leading-none">
-                Bangalore, The Garden City
+              <h2 className="font-headline text-4xl md:text-5xl lg:text-7xl leading-[1.2] tracking-tighter">
+                Bangalore,<br /> The Garden City
               </h2>
               <p className="font-body text-lg opacity-80 max-w-md">
                 The wedding will take place in the historical heart of Bangalore, surrounded by colonial architecture and botanical wonders.
               </p>
               <Link href="/guide" className="inline-flex items-center gap-4 group">
-                <span className="w-12 h-px bg-on-primary group-hover:w-20 transition-all"></span>
+                <span className="w-6 h-px bg-on-primary group-hover:w-20 transition-all"></span>
                 <span className="font-label text-sm uppercase tracking-widest">Explore the Guide</span>
               </Link>
             </div>
