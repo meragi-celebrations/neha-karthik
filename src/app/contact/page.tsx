@@ -13,9 +13,9 @@ export default function Contact() {
           <span className="font-label text-xs uppercase tracking-[0.5em] text-primary mb-6 block">
             Get in Touch
           </span>
-          <h1 className="font-headline text-8xl md:text-[10rem] text-primary leading-[0.8] tracking-tighter">
+          <h1 className="font-headline text-7xl md:text-9xl text-primary leading-[0.9] tracking-tighter">
             Connect <br />
-            <span className="italic">With Us</span>
+            <span className="text-secondary">With Us</span>
           </h1>
           <div className="mt-12 max-w-xl">
             <p className="font-body text-xl text-on-surface-variant leading-relaxed italic">
@@ -35,23 +35,23 @@ export default function Contact() {
             </div>
             
             <div className="grid grid-cols-1 gap-10 pt-8 border-t border-outline-variant/20">
-              <div className="flex items-start gap-6 group">
-                <div className="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+              <div className="flex items-center gap-6 group">
+                <div className="w-12 h-12 flex-shrink-0 bg-primary/5 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
                   <span className="material-symbols-outlined">call</span>
                 </div>
                 <div>
                   <p className="font-label text-[10px] uppercase tracking-widest text-primary opacity-60 mb-1">Mobile</p>
-                  <a href="tel:+918828036446" className="font-headline text-2xl text-primary hover:text-secondary transition-colors">+91 88280 36446</a>
+                  <a href="tel:+918828036446" className="font-headline text-2xl text-primary hover:text-secondary transition-colors whitespace-nowrap [font-variant-numeric:lining-nums]">+91 88280 36446</a>
                 </div>
               </div>
               
-              <div className="flex items-start gap-6 group">
-                <div className="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+              <div className="flex items-center gap-6 group">
+                <div className="w-12 h-12 flex-shrink-0 bg-primary/5 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
                   <span className="material-symbols-outlined">mail</span>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="font-label text-[10px] uppercase tracking-widest text-primary opacity-60 mb-1">Email</p>
-                  <a href="mailto:nehaandkarthik.wedding@gmail.com" className="font-headline text-2xl text-primary hover:text-secondary transition-colors underline decoration-primary/20 underline-offset-4">nehaandkarthik.wedding@gmail.com</a>
+                  <a href="mailto:nehaandkarthik.wedding@gmail.com" className="font-headline text-2xl text-primary hover:text-secondary transition-colors underline decoration-primary/20 underline-offset-4 break-all">nehaandkarthik.wedding@gmail.com</a>
                 </div>
               </div>
             </div>

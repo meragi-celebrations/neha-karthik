@@ -209,8 +209,9 @@ export default function RSVP() {
               <span className="font-label text-secondary text-xs tracking-[0.3em] uppercase">
                 July 12, 2026 • Bangalore
               </span>
-            <h1 className="font-headline text-6xl md:text-8xl italic text-primary leading-tight">
-              Please Respond
+            <h1 className="font-headline text-6xl sm:text-6xl md:text-9xl text-primary leading-[0.9] tracking-tighter">
+              Please <br /> 
+              <span className="text-secondary">Respond</span>
             </h1>
             <div className="mt-8 flex justify-center items-center gap-4">
               <span className="h-px w-12 bg-outline-variant opacity-30"></span>

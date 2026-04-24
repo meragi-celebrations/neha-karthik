@@ -21,7 +21,7 @@ export default function Events() {
       title: "Devara Samradhane",
       description: "Commencing our journey with divine blessings. A morning of spiritual resonance and traditional rituals followed by a sacred brunch.",
       location: "Ekadanta Pravachana Mandira, B.E.L. Sri Ganapathi Seva Mandali, B.E.L. Colony, Jalahalli, Bengaluru 560 013",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAXO2EmZG2qkghraNHJuLFE2z8v-a8h_xeKphPxhj2Oos75knOAGTzNOlj7Uh5Y3TT01iQzn_AcOK8v4nN3BVy4O9XDx6ugVlRjjQLle0poqBXbdLdaUkbNtKiz3yBN0i-9-52uTTH1UiwfXVzU6slK-e3SUaZdfxj2KRkgcyUD-P5GnBcEMBRBGSh6e2y37_JhUXth0Hw2Dd1AeexyOmg2j9fZ2xtcA4EMDtS02jgPWovY1oR6-I38ySuz0HBj_-lJWFWcIEZM2w",
+      image: "/assets/temple.webp",
       atmosphere: "Sacred & Traditional",
     },
     {
@@ -39,7 +39,7 @@ export default function Events() {
       title: "Sangeet & Afterparty",
       description: "An electrifying night of music, dance, and celebration. Let the rhythms take over as we celebrate the union of two families.",
       location: "Scarlet Ballroom",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD8_EP7hfqd-R9p9M-KSjpSMFnI5HP04ZA5OlkuqytgP6i1lFCMfTzSPDr3ANl9TMEI9eMadnbxS57YbI9hxs-bFLBA-oYGPcJjbTO2ZoiKur009AdtzB5faxOHBpHGaJixKlbu-cU5cHEqfwr38NnEwdnJC0d4Mm07Kyj17jRqi3tkZu8_5ZN2CAoYEhMl70C64Fn4jff2MJCTW_oLGPF269kuvO68Mws3MOELiwM2kdvpR0qzAB4whiTKZnJNe4bQQubAJIcnew",
+      image: "/assets/sangeet_and_lunch.avif",
       atmosphere: "Electric & Festive",
     },
     {
@@ -57,7 +57,7 @@ export default function Events() {
       title: "Varpooje followed by Dinner",
       description: "Traditional rituals honoring our heritage, followed by a sophisticated Sit-down Banti Bhojanam dinner.",
       location: "Zinnia / Scarlet Ballroom",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBbaYqQxFr4d1avXG0eEprfJ88YWB1WoZHSKiljH0B3xOfGEn7BGxEAJDETSXNALfCVFzrOuYpyfVyBPTCEfI35JkcLOR6REJDiVSKLR4MtXZ-xzEi69NZAKjzGdzhpxUQhqDksBjmPZxDUa8OZmmkWGOX98oHgteiCsx1qu0q61l8O-tla0fFQEOgNii5M-qVWWLZOhpSWiJ8A886WoVuA2YO1xNjUxaYscjGD7l8UwhDhRDbRsXiLXxhRi81qOFec41Ucnxx6dQ",
+      image: "/assets/varpooje.avif",
       atmosphere: "Elegant & Traditional",
     },
     {
@@ -66,7 +66,7 @@ export default function Events() {
       title: "The Wedding followed by Lunch",
       description: "The pinnacle of our union. A grand ceremony followed by a celebratory Banti Bhojanam lunch in both Scarlet and Zinnia.",
       location: "Convention Center / Scarlet Ballroom",
-      image: "/assets/convention_center_sheraton.avif",
+      image: "/assets/wedding_hall.avif",
       atmosphere: "Grand & Imperial",
     },
     {
@@ -92,9 +92,9 @@ export default function Events() {
               <span className="font-label text-[10px] uppercase tracking-[0.5em] text-secondary font-bold block">
                 The Itinerary
               </span>
-              <h1 className="font-headline text-5xl sm:text-7xl md:text-[7rem] lg:text-[11rem] text-primary leading-[0.85] tracking-tighter">
+              <h1 className="font-headline text-6xl sm:text-6xl md:text-9xl text-primary leading-[0.9] tracking-tighter">
                 Celebrations <br />
-                <span className="italic text-secondary">& Venues</span>
+                <span className=" text-secondary">& Venues</span>
               </h1>
               <div className="max-w-xl pt-12">
                 <p className="font-body text-xl text-on-surface-variant leading-relaxed">

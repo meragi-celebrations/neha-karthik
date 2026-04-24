@@ -17,9 +17,9 @@ export default function Travel() {
             <span className="font-label text-secondary tracking-[0.4em] uppercase text-[10px] md:text-xs font-bold mb-6 block animate-in fade-in slide-in-from-bottom-4 duration-700">
               International Guests
             </span>
-            <h1 className="font-headline text-6xl md:text-9xl text-primary leading-[0.9] tracking-tighter mb-8 animate-in fade-in slide-in-from-bottom-6 duration-1000">
+            <h1 className="font-headline text-6xl sm:text-6xl md:text-9xl text-primary leading-[0.9] tracking-tighter mb-8 animate-in fade-in slide-in-from-bottom-6 duration-1000">
               Travel & <br />
-              <span className="italic text-secondary">Logistics</span>
+              <span className=" text-secondary">Logistics</span>
             </h1>
             <p className="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
               We are so honored that you are traveling across the world to celebrate with us. To make your journey as seamless as possible, we have curated essential details for your visit to the Garden City.
@@ -31,7 +31,7 @@ export default function Travel() {
           {/* Section 1: Visa Information */}
           <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4 sticky top-32">
-              <h2 className="font-headline text-4xl md:text-5xl text-primary mb-6 italic">Visa & E-Visa</h2>
+              <h2 className="font-body text-4xl md:text-5xl text-primary mb-6">Visa & E-Visa</h2>
               <p className="font-body text-on-surface-variant leading-relaxed">
                 Most international guests will require a visa to enter India. We recommend applying for an **e-Tourist Visa** at least 3 weeks before your travel.
               </p>
@@ -84,7 +84,7 @@ export default function Travel() {
                            </div>
                            <div className="grid grid-cols-1 gap-1">
                               <span className="font-label text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">Contact Number</span>
-                              <span className="font-headline text-xl text-primary">+91 88280 36446</span>
+                              <span className="font-headline text-xl text-primary [font-variant-numeric:lining-nums]">+91 88280 36446</span>
                            </div>
                         </div>
 
@@ -117,7 +117,7 @@ export default function Travel() {
 
              <div className="lg:col-span-5 order-1 lg:order-2 space-y-8">
                 <span className="font-label text-secondary tracking-[0.4em] uppercase text-[10px] font-bold block">Arrivals</span>
-                <h2 className="font-headline text-5xl md:text-6xl text-primary leading-tight">Flight <br /> & <span className="italic">Hubs</span></h2>
+                <h2 className="font-headline text-4xl md:text-5xl lg:text-7xl text-primary leading-tight">Flight <br /> & <span className="italic">Hubs</span></h2>
                 <p className="font-body text-lg text-on-surface-variant leading-relaxed">
                    Bangalore is a major international hub with direct flights from across the globe. For those coming from outside India, direct flights to Chennai or Bombay are also viable, with frequent 1-hour domestic connections to Bangalore thereafter.
                 </p>

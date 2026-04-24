@@ -27,11 +27,14 @@ export default function Wardrobe() {
             </span>
             <h1 className="font-headline text-7xl md:text-9xl text-on-primary leading-tight -ml-1 md:-ml-2">
               Wardrobe <br />
-              <span className="italic font-light">Curations</span>
+              <span className="font-light">Curations</span>
             </h1>
             <div className="mt-8 flex items-center gap-4 text-primary-fixed-dim">
               <span className="h-px w-12 bg-primary-fixed-dim"></span>
               <p className="font-label text-sm uppercase tracking-widest">A Guide to Wedding Finery</p>
+            </div>
+            <div className="mt-4">
+              <p className="font-label text-base uppercase tracking-[0.3em] text-white/80 font-semibold">⚠ Work in Progress</p>
             </div>
           </div>
           <div className="absolute bottom-12 right-12 hidden md:block">

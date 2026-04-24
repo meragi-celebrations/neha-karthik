@@ -42,9 +42,9 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full flex justify-between items-center px-8 py-6 max-w-none bg-white/60 backdrop-blur-xl z-50 shadow-[0_20px_40px_rgba(51,3,55,0.05)]">
-        <div className="font-headline italic text-2xl text-primary">
+        <Link href="/" className="font-headline italic text-2xl text-primary hover:text-secondary transition-colors">
           Neha &amp; Karthik
-        </div>
+        </Link>
         
         {/* Navigation Links (Desktop) */}
         <div className="hidden md:flex items-center space-x-8">
