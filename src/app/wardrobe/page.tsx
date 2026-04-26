@@ -127,7 +127,7 @@ export default function Wardrobe() {
             <div className="md:col-span-4 bg-surface-container-high relative overflow-hidden rounded-sm p-8 flex flex-col justify-between h-[300px]">
               <div>
                 <span className="font-label text-[10px] tracking-[0.4em] uppercase text-secondary">
-                  01. Thursday Morning
+                  01. Monday Morning
                 </span>
                 <h3 className="font-headline text-4xl mt-2">Devara Samradhane</h3>
               </div>
@@ -155,7 +155,7 @@ export default function Wardrobe() {
             <div className="md:col-span-4 border border-outline-variant/15 flex items-center justify-center p-8 h-[300px] rounded-sm">
               <div className="text-center">
                 <span className="font-label text-[10px] tracking-[0.4em] uppercase text-secondary">
-                  03. Friday Noon
+                  03. Saturday Noon
                 </span>
                 <h3 className="font-headline text-4xl mt-2">Mehendi</h3>
                 <div className="mt-4 flex gap-2 justify-center">
@@ -176,7 +176,7 @@ export default function Wardrobe() {
               </div>
               <div className="w-full md:w-1/2 p-12 flex flex-col justify-center bg-surface-container-low">
                 <span className="font-label text-[10px] tracking-[0.4em] uppercase text-secondary">
-                  04. Saturday Morning
+                  04. Sunday Morning
                 </span>
                 <h3 className="font-headline text-6xl mt-4 mb-6">The Wedding</h3>
                 <p className="font-body text-on-surface-variant leading-relaxed mb-8 text-sm">
@@ -199,7 +199,7 @@ export default function Wardrobe() {
             <div className="md:col-span-4 bg-secondary text-on-secondary p-8 flex flex-col justify-between h-[300px] rounded-sm">
               <div>
                 <span className="font-label text-[10px] tracking-[0.4em] uppercase text-secondary-fixed">
-                  05. Saturday Evening
+                  05. Sunday Evening
                 </span>
                 <h3 className="font-headline text-4xl mt-2">Reception</h3>
               </div>
