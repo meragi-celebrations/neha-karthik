@@ -144,13 +144,13 @@ export default function Home() {
                 </span>
                 <div className="flex items-center justify-center gap-8 border-y border-outline-variant py-8">
                   <div className="text-center">
-                    <span className="font-headline text-6xl text-primary block [font-variant-numeric:lining-nums]">06-12</span>
-                    <span className="font-label text-xs uppercase opacity-60">July</span>
+                    <span className="font-headline text-6xl text-primary block [font-variant-numeric:lining-nums]">6th to 12th</span>
+                    <span className="font-label text-base uppercase tracking-[0.3em] text-secondary font-bold">July</span>
                   </div>
                   <div className="h-16 w-px bg-outline-variant"></div>
                   <div className="text-center">
                     <span className="font-headline text-6xl text-primary block [font-variant-numeric:lining-nums]">2026</span>
-                    <span className="font-label text-xs uppercase opacity-60">Year</span>
+                    <span className="font-label text-base uppercase tracking-[0.3em] text-secondary font-bold">Year</span>
                   </div>
                 </div>
               </div>
