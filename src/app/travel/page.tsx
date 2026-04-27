@@ -35,12 +35,7 @@ export default function Travel() {
               <p className="font-body text-on-surface-variant leading-relaxed">
                 Most international guests will require a visa to enter India. We recommend applying for an **e-Tourist Visa** at least 3 weeks before your travel.
               </p>
-              <div className="mt-10 p-6 bg-secondary/5 border border-secondary/20 rounded-sm">
-                <p className="font-label text-[10px] uppercase tracking-widest text-secondary font-bold mb-2">Requirement Note</p>
-                <p className="font-body text-sm text-primary/80 leading-relaxed italic">
-                  "You will need to upload a digital passport photograph (square, with a white/light background) and a scan of your passport ID page."
-                </p>
-              </div>
+
             </div>
 
             <div className="lg:col-span-8 bg-surface-container-low border border-outline-variant/10 p-8 md:p-16 relative overflow-hidden">
@@ -63,6 +58,12 @@ export default function Travel() {
                           Official Visa Portal
                           <span className="material-symbols-outlined text-sm">open_in_new</span>
                         </a>
+                        <div className="mt-8 p-6 bg-secondary/5 border border-secondary/20 rounded-sm">
+                           <p className="font-label text-[10px] uppercase tracking-widest text-secondary font-bold mb-2">E-Visa Requirement Note</p>
+                           <p className="font-body text-[13px] text-primary/80 leading-relaxed italic">
+                              "You will need to upload a digital passport photograph (square, with a white/light background) and a scan of your passport ID page."
+                           </p>
+                        </div>
                      </div>
 
                      <div className="space-y-8">
@@ -74,7 +75,7 @@ export default function Travel() {
                         <div className="space-y-6">
                            <div className="grid grid-cols-1 gap-1">
                               <span className="font-label text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">Reference Name</span>
-                              <span className="font-headline text-xl text-primary">Bhakti Munvar</span>
+                              <span className="font-headline text-xl text-primary">Deepak Visweswaraiah</span>
                            </div>
                            <div className="grid grid-cols-1 gap-1">
                               <span className="font-label text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">Address</span>

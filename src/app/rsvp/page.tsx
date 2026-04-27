@@ -11,11 +11,15 @@ const EVENT_INFO: Record<string, { date: string; time?: string; location: string
   "Devara Samradhane": { date: "July 6th", time: "10:00 AM – 3:00 PM", location: "Ekadanta Mandira" },
   "Devara Samaradhane": { date: "July 6th", time: "10:00 AM – 3:00 PM", location: "Ekadanta Mandira" },
   "Welcome Lunch": { date: "July 10th", time: "11:00 AM – 2:00 PM", location: "Zinnia, Sheraton" },
+  "Sangeeth": { date: "July 10th", time: "7:00 PM – 10:00 PM", location: "Scarlet Ballroom" },
+  "Sangeeth After party": { date: "July 10th", time: "11:00 PM onwards", location: "Scarlet Ballroom" },
   "Sangeet & Afterparty": { date: "July 10th", time: "7:00 PM – 10:00 PM (Sangeeth) & 11:00 PM onwards (After Party)", location: "Scarlet Ballroom" },
-  "Mehendi followed by Lunch": { date: "July 11th", time: "11:00 AM – 2:00 PM", location: "Party Lawn" },
-  "Varapuje": { date: "July 11th", time: "6:30 PM – 10:00 PM", location: "Zinnia" },
-  "Wedding": { date: "July 12th", time: "10:00 AM – 2:00 PM", location: "Convention Center" },
-  "Reception": { date: "July 12th", time: "7:00 PM – 10:00 PM (Reception) & 10:00 PM onwards (After Party)", location: "Scarlet Ballroom" }
+  "Mehendi": { date: "July 11th", time: "11:00 AM – 2:00 PM", location: "Party Lawn / Scarlet Alfresco" },
+  "Mehendi followed by Lunch": { date: "July 11th", time: "11:00 AM – 2:00 PM", location: "Party Lawn / Scarlet Alfresco" },
+  "Varapuje": { date: "July 11th", time: "6:30 PM – 10:00 PM", location: "Zinnia / Scarlet Ballroom" },
+  "Wedding": { date: "July 12th", time: "10:00 AM – 2:00 PM", location: "Convention Center / Scarlet Ballroom" },
+  "Reception-afterpart": { date: "July 12th", time: "10:00 PM onwards (After Party)", location: "Scarlet Ballroom" },
+  "Reception": { date: "July 12th", time: "7:00 PM – 10:00 PM (Reception)", location: "Scarlet Ballroom" }
 };
 
 export default function RSVP() {
@@ -262,6 +266,14 @@ export default function RSVP() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-12">
+                {/* Guidance Note */}
+                <div className="bg-primary/5 p-6 rounded-sm border border-primary/10">
+                  <p className="font-body text-sm text-primary italic leading-relaxed">
+                    Please provide your contact details below to access your RSVP form and continue. 
+                    <span className="block mt-1 opacity-70">The remaining fields will appear automatically once your information is entered.</span>
+                  </p>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                   {/* Name Input */}
                   <div className="group">

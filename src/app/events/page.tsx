@@ -48,7 +48,7 @@ export default function Events() {
       title: "Mehendi followed by Lunch",
       description: "Sun-kissed celebrations filled with intricate henna designs and joyous melodies. A relaxed afternoon on the lawn.",
       location: "Party Lawn / Scarlet Alfresco",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9s8O8-W18g71fo34cQLe2dNYWrcx-KhsgzDbvM323yBNoV5eT3gU76cOgIkhdpmCLwn9tyxXMLQGXROB7Q3kW1SL2ZmDUnnXA4vddy9qZN7hVEeNa5tVCbMZMHzkx7lQbW3tVKjsrpkiIFNk8tlEczPBb9xCYYnUbR7zBKzvFeDF4n6Rk7VbAGgv4U877f7marzehQTjcsqXPRKNQmk2IMWUJH35TVMllzDkIeo2Y2zpZb4W36yYuIjLajEx8I4IQtAt2IjkbGQ",
+      image: "/assets/scarlet_alfresco.webp",
       atmosphere: "Sun-kissed & Joyful",
     },
     {
@@ -202,7 +202,7 @@ export default function Events() {
             </div>
             <div className="relative aspect-video bg-surface-container-low overflow-hidden rounded-sm">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9s8O8-W18g71fo34cQLe2dNYWrcx-KhsgzDbvM323yBNoV5eT3gU76cOgIkhdpmCLwn9tyxXMLQGXROB7Q3kW1SL2ZmDUnnXA4vddy9qZN7hVEeNa5tVCbMZMHzkx7lQbW3tVKjsrpkiIFNk8tlEczPBb9xCYYnUbR7zBKzvFeDF4n6Rk7VbAGgv4U877f7marzehQTjcsqXPRKNQmk2IMWUJH35TVMllzDkIeo2Y2zpZb4W36yYuIjLajEx8I4IQtAt2IjkbGQ"
+                src="/assets/sheraton_lobby.avif"
                 alt="Bangalore Cityscape"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
