@@ -41,7 +41,13 @@ export default function RSVP() {
     accessibilityChoice: "no",
     accessibilityDetails: "",
     hasAdditionalGuests: "no",
-    additionalGuests: [] as { id: string; firstName: string; lastName: string }[]
+    additionalGuests: [] as { 
+      id: string; 
+      firstName: string; 
+      lastName: string;
+      eventResponses: Record<string, 'attending' | 'declined'>;
+      generalAttendance: 'attending' | 'declined';
+    }[]
   });
 
   const handleLookup = async (identifier: string) => {
@@ -116,11 +122,25 @@ export default function RSVP() {
   }, [formData.contactNumber]);
 
   const addGuest = () => {
+    // Initialize event responses based on invitedEvents
+    const initialResponses: Record<string, 'attending' | 'declined'> = {};
+    if (invitedEvents) {
+      invitedEvents.forEach(evt => {
+        initialResponses[evt] = 'attending';
+      });
+    }
+
     setFormData(prev => ({
       ...prev,
       additionalGuests: [
         ...prev.additionalGuests,
-        { id: Math.random().toString(36).substr(2, 9), firstName: "", lastName: "" }
+        { 
+          id: Math.random().toString(36).substr(2, 9), 
+          firstName: "", 
+          lastName: "",
+          eventResponses: initialResponses,
+          generalAttendance: 'attending'
+        }
       ]
     }));
   };
@@ -141,6 +161,24 @@ export default function RSVP() {
     }));
   };
 
+  const updateGuestEvent = (guestId: string, event: string, status: 'attending' | 'declined') => {
+    setFormData(prev => ({
+      ...prev,
+      additionalGuests: prev.additionalGuests.map(g => 
+        g.id === guestId ? { ...g, eventResponses: { ...g.eventResponses, [event]: status } } : g
+      )
+    }));
+  };
+
+  const updateGuestGeneral = (guestId: string, status: 'attending' | 'declined') => {
+    setFormData(prev => ({
+      ...prev,
+      additionalGuests: prev.additionalGuests.map(g => 
+        g.id === guestId ? { ...g, generalAttendance: status } : g
+      )
+    }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
@@ -153,10 +191,22 @@ export default function RSVP() {
         formData.accessibilityChoice === "yes" ? `Accessibility: ${formData.accessibilityDetails}` : ""
       ].filter(Boolean).join(" | ");
 
-      const guestNames = formData.additionalGuests
-        .map(g => `${g.firstName} ${g.lastName}`.trim())
+      const guestDetails = formData.additionalGuests
+        .map(g => {
+          const name = `${g.firstName} ${g.lastName}`.trim();
+          if (!name) return null;
+          
+          if (invitedEvents && invitedEvents.length > 0) {
+            const responses = Object.entries(g.eventResponses)
+              .map(([evt, status]) => `${evt}: ${status === 'attending' ? 'Yes' : 'No'}`)
+              .join(", ");
+            return `${name} (${responses})`;
+          } else {
+            return `${name} (Attending: ${g.generalAttendance === 'attending' ? 'Yes' : 'No'})`;
+          }
+        })
         .filter(Boolean)
-        .join(", ");
+        .join(" | ");
 
       const isGeneralGuest = invitedEvents && invitedEvents.length === 0;
       
@@ -179,7 +229,7 @@ export default function RSVP() {
         guestCount: isOverallAttending ? (1 + formData.additionalGuests.length).toString() : "0",
         attendance: isOverallAttending ? "attending" : "declined",
         dietary: formData.dietaryChoice === "yes" ? formData.dietaryDetails : "None",
-        additionalGuests: guestNames,
+        additionalGuests: guestDetails || "None",
         accessibility: formData.accessibilityChoice === "yes" ? formData.accessibilityDetails : "None",
         foodAllergies: formData.allergiesChoice === "yes" ? formData.allergiesDetails : "None"
       };
@@ -547,41 +597,112 @@ export default function RSVP() {
                       <div className="space-y-12 border-t border-outline-variant/20 pt-12 animate-in fade-in slide-in-from-top-4">
                         <h3 className="font-headline text-3xl text-primary italic">Additional Guests</h3>
                         
-                        <div className="space-y-8">
+                        <div className="space-y-12">
                           {formData.additionalGuests.map((guest, index) => (
-                            <div key={guest.id} className="flex flex-col md:flex-row gap-6 items-end group/item">
-                              <div className="flex-1 space-y-2">
-                                <label className="font-label text-[10px] uppercase tracking-widest text-secondary">
-                                  Guest {index + 1} First Name
-                                </label>
-                                <input
-                                  value={guest.firstName}
-                                  onChange={(e) => updateGuest(guest.id, "firstName", e.target.value)}
-                                  className="input-underline w-full font-headline text-xl py-2 text-primary"
-                                  placeholder="First Name"
-                                  required
-                                />
+                            <div key={guest.id} className="p-8 bg-surface-container-low/30 rounded-sm border border-outline-variant/10 space-y-8 group/item">
+                              <div className="flex flex-col md:flex-row gap-6 items-end">
+                                <div className="flex-1 space-y-2">
+                                  <label className="font-label text-[10px] uppercase tracking-widest text-secondary">
+                                    Guest {index + 1} First Name
+                                  </label>
+                                  <input
+                                    value={guest.firstName}
+                                    onChange={(e) => updateGuest(guest.id, "firstName", e.target.value)}
+                                    className="input-underline w-full font-headline text-xl py-2 text-primary"
+                                    placeholder="First Name"
+                                    required
+                                  />
+                                </div>
+                                <div className="flex-1 space-y-2">
+                                  <label className="font-label text-[10px] uppercase tracking-widest text-secondary">
+                                    Guest {index + 1} Last Name
+                                  </label>
+                                  <input
+                                    value={guest.lastName}
+                                    onChange={(e) => updateGuest(guest.id, "lastName", e.target.value)}
+                                    className="input-underline w-full font-headline text-xl py-2 text-primary"
+                                    placeholder="Last Name"
+                                    required
+                                  />
+                                </div>
+                                <button
+                                  type="button"
+                                  onClick={() => removeGuest(guest.id)}
+                                  className="p-2 text-secondary hover:text-primary transition-colors mb-2"
+                                  title="Remove Guest"
+                                >
+                                  <span className="material-symbols-outlined">delete_outline</span>
+                                </button>
                               </div>
-                              <div className="flex-1 space-y-2">
-                                <label className="font-label text-[10px] uppercase tracking-widest text-secondary">
-                                  Guest {index + 1} Last Name
+
+                              {/* Guest Specific Attendance */}
+                              <div className="space-y-4 pt-4 border-t border-outline-variant/10">
+                                <label className="font-label text-[9px] uppercase tracking-[0.2em] text-on-surface-variant/60 block mb-4">
+                                  Event Attendance for {guest.firstName || `Guest ${index + 1}`}
                                 </label>
-                                <input
-                                  value={guest.lastName}
-                                  onChange={(e) => updateGuest(guest.id, "lastName", e.target.value)}
-                                  className="input-underline w-full font-headline text-xl py-2 text-primary"
-                                  placeholder="Last Name"
-                                  required
-                                />
+                                
+                                {invitedEvents && invitedEvents.length > 0 ? (
+                                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    {invitedEvents.map(event => (
+                                      <div key={event} className="flex items-center justify-between p-3 bg-surface/50 rounded-sm border border-outline-variant/10">
+                                        <span className="font-body text-xs text-primary">{event}</span>
+                                        <div className="flex gap-1 bg-surface-container-low p-0.5 rounded-sm">
+                                          <button
+                                            type="button"
+                                            onClick={() => updateGuestEvent(guest.id, event, 'attending')}
+                                            className={`px-3 py-1 rounded-sm font-label text-[8px] uppercase tracking-widest transition-all ${
+                                              guest.eventResponses[event] === 'attending' 
+                                                ? 'bg-primary text-on-primary shadow-sm' 
+                                                : 'text-on-surface-variant hover:bg-primary/5'
+                                            }`}
+                                          >
+                                            Yes
+                                          </button>
+                                          <button
+                                            type="button"
+                                            onClick={() => updateGuestEvent(guest.id, event, 'declined')}
+                                            className={`px-3 py-1 rounded-sm font-label text-[8px] uppercase tracking-widest transition-all ${
+                                              guest.eventResponses[event] === 'declined' 
+                                                ? 'bg-secondary text-on-secondary shadow-sm' 
+                                                : 'text-on-surface-variant hover:bg-secondary/5'
+                                            }`}
+                                          >
+                                            No
+                                          </button>
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </div>
+                                ) : (
+                                  <div className="flex items-center justify-between p-4 bg-primary/5 rounded-sm border border-primary/10">
+                                    <span className="font-headline text-lg text-primary italic">Will they be attending?</span>
+                                    <div className="flex gap-2">
+                                      <button
+                                        type="button"
+                                        onClick={() => updateGuestGeneral(guest.id, 'attending')}
+                                        className={`px-6 py-2 rounded-sm font-label text-[9px] uppercase tracking-widest transition-all ${
+                                          guest.generalAttendance === 'attending' 
+                                            ? 'bg-primary text-on-primary shadow-md' 
+                                            : 'bg-surface text-on-surface-variant hover:bg-primary/5'
+                                        }`}
+                                      >
+                                        Attending
+                                      </button>
+                                      <button
+                                        type="button"
+                                        onClick={() => updateGuestGeneral(guest.id, 'declined')}
+                                        className={`px-6 py-2 rounded-sm font-label text-[9px] uppercase tracking-widest transition-all ${
+                                          guest.generalAttendance === 'declined' 
+                                            ? 'bg-secondary text-on-secondary shadow-md' 
+                                            : 'bg-surface text-on-surface-variant hover:bg-secondary/5'
+                                        }`}
+                                      >
+                                        Declining
+                                      </button>
+                                    </div>
+                                  </div>
+                                )}
                               </div>
-                              <button
-                                type="button"
-                                onClick={() => removeGuest(guest.id)}
-                                className="p-2 text-secondary hover:text-primary transition-colors mb-2"
-                                title="Remove Guest"
-                              >
-                                <span className="material-symbols-outlined">delete_outline</span>
-                              </button>
                             </div>
                           ))}
                         </div>
