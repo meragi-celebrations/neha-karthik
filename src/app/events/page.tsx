@@ -26,7 +26,7 @@ export default function Events() {
     },
     {
       date: "July 10th",
-      time: "11:00 AM – 2:00 PM",
+      time: "11:00 AM – 4:00 PM",
       title: "Welcome Lunch",
       description: "A vibrant introduction to our celebrations. Join us for a curated afternoon of flavors and hospitality as we welcome our loved ones.",
       location: "Zinnia, Sheraton Whitefield",
@@ -35,7 +35,7 @@ export default function Events() {
     },
     {
       date: "July 10th",
-      time: "7:00 PM – 10:00 PM (Sangeeth) & 11:00 PM onwards (After Party)",
+      time: "7:00 PM – 10:00 PM (Sangeeth) & 10:00 PM onwards (After Party)",
       title: "Sangeet & Afterparty",
       description: "An electrifying night of music, dance, and celebration. Let the rhythms take over as we celebrate the union of two families.",
       location: "Scarlet Ballroom",
@@ -44,7 +44,7 @@ export default function Events() {
     },
     {
       date: "July 11th",
-      time: "11:00 AM – 2:00 PM",
+      time: "11:00 AM – 3:00 PM",
       title: "Mehendi followed by Lunch",
       description: "Sun-kissed celebrations filled with intricate henna designs and joyous melodies. A relaxed afternoon on the lawn.",
       location: "Party Lawn / Scarlet Alfresco",
@@ -53,7 +53,7 @@ export default function Events() {
     },
     {
       date: "July 11th",
-      time: "6:30 PM – 10:00 PM",
+      time: "6:00 PM – 10:00 PM",
       title: "Varpooje followed by Dinner",
       description: "Traditional rituals honoring our heritage, followed by a sophisticated Sit-down Banti Bhojanam dinner.",
       location: "Zinnia / Scarlet Ballroom",
